@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13a042bd-c915-4943-9c3a-9d761e3bbb3e" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/learn.js" afterPath="$PROJECT_DIR$/learn.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,8 +20,8 @@
       <file leaf-file-name="learn.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/learn.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="723">
-              <caret line="979" column="33" lean-forward="false" selection-start-line="979" selection-start-column="33" selection-end-line="979" selection-end-column="33" />
+            <state relative-caret-position="349">
+              <caret line="973" column="0" lean-forward="false" selection-start-line="973" selection-start-column="0" selection-end-line="973" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -133,12 +134,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1513707740021</updated>
-      <workItem from="1513707742487" duration="1349000" />
+      <workItem from="1513707742487" duration="2703000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1349000" />
+    <option name="totallyTimeSpent" value="2703000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -176,8 +177,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/learn.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="979" column="33" lean-forward="false" selection-start-line="979" selection-start-column="33" selection-end-line="979" selection-end-column="33" />
+        <state relative-caret-position="349">
+          <caret line="973" column="0" lean-forward="false" selection-start-line="973" selection-start-column="0" selection-end-line="973" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -74,7 +74,7 @@ for (i = 2; i < n; i ++) {
    fibonacci[i] = fibonacci[i-1] + fibonacci[i-2];
 }
 
-alert(fibonacci.slice(0,n));
+alert(fibonacci.slice(0,n));-
 // slice отрезает от массива первые n элементов, если n < 2
 
 
@@ -970,11 +970,23 @@ function spinalCase(str) {
 spinalCase('This Is Spinal Tap');
 
 
-function spinalCase(str) {
-   // Replace low-upper case to low-space-uppercase
-   str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
-   // Split on whitespace and underscores and join with dash
-   return str.toLowerCase().split(/(?:_| )+/) .join('-');
+
+Сума чисел Фібоначчі
+function sumFibs(num) {
+   var prevNumber = 0;
+   var currNumber = 1;
+   var result = 0;
+   while (currNumber <= num) {
+      if (currNumber % 2 !== 0) {
+         result += currNumber;
+      }
+
+      currNumber += prevNumber;
+      prevNumber = currNumber - prevNumber;
+   }
+
+   return result;
 }
 
-spinalCase('This Is Spinal Tap');
+// test here
+sumFibs(4);
