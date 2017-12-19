@@ -1,0 +1,23 @@
+*{
+  margin: 0;
+   padding: 0;
+}
+.class1{
+   background-color: black;
+   text-align: center;
+   align-content: center;
+}
+
+h1{
+   color: rebeccapurple;
+}
+
+.semashov{
+   width: 1000px;
+   padding: 10px;
+}
+.class4{
+   margin: 20px 0px 0px 20px;
+   display: inline-block;
+   box-shadow: 0 0 0 6px red, 0 0 0 12px black, 0 0 0 24px yellow;
+}
