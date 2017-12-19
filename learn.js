@@ -929,3 +929,43 @@ navigator.geolocation.getCurrentPosition((pos) => {
         })
         .catch((error) => alert(error));
 });
+
+
+
+// Загублені букви алфавіту
+function fearNotLetter(str) {
+
+   for(var i = 0; i < str.length; i++) {
+      var code = str.charCodeAt(i);
+      if (code !== str.charCodeAt(0) + i) {
+
+         return String.fromCharCode(code - 1);
+      }
+   }
+   return undefined;
+}
+
+fearNotLetter("abce");
+
+
+
+// Конкатенація всіх масивів і вивід унікальних значеня ES2015
+function uniteUnique(arr) {
+   const args = [].concat(...arguments);
+
+   return [...new Set(args)];
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
+
+// Replace метод
+function spinalCase(str) {
+   // Replace low-upper case to low-space-uppercase
+   str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
+   // Split on whitespace and underscores and join with dash
+   return str.toLowerCase().split(/(?:_| )+/) .join('-');
+}
+
+spinalCase('This Is Spinal Tap');
+
