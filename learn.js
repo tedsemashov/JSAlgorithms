@@ -971,7 +971,7 @@ spinalCase('This Is Spinal Tap');
 
 
 
-Сума чисел Фібоначчі
+// Сума чисел Фібоначчі
 function sumFibs(num) {
    var prevNumber = 0;
    var currNumber = 1;
@@ -990,3 +990,71 @@ function sumFibs(num) {
 
 // test here
 sumFibs(4);
+
+
+// Формування одного масиву
+function steamrollArray(arr) {
+   var flattenedArray = [];
+
+   // Create function that adds an element if it is not an array.
+   // If it is an array, then loops through it and uses recursion on that array.
+   var flatten = function(arg) {
+      if (!Array.isArray(arg)) {
+         flattenedArray.push(arg);
+      } else {
+         for (var a in arg) {
+            flatten(arg[a]);
+         }
+      }
+   };
+
+   // Call the function for each element in the array
+   arr.forEach(flatten);
+   return flattenedArray;
+}
+
+// test here
+steamrollArray([1, [2], [3, [[4]]]]);
+
+
+
+// Сума значень
+function addTogether() {
+   var args = new Array(arguments.length);
+   //Storing the arguments in an array
+   for(var i = 0; i < args.length; ++i) {
+      args[i] = arguments[i];
+   }
+   //Check for the arguments length
+   if(args.length == 2){
+      //If there are two arguments,check for the type of both arguments
+      //Use typeof to check the type of the argument(both should be numbers)
+      if(typeof args[0] !== 'number' || typeof args[1] !=='number' ){
+         return undefined;
+      }
+      return args[0]+args[1];
+   }
+   //When only one argument is provided
+   if(args.length == 1){
+      a= args[0];
+      //Check the  argument using typeof
+      if(typeof a!=='number'){
+         return undefined;
+      }
+      else{
+         //Making use of closures
+         return function(b){
+            //Checking the second argument
+            if(typeof b !=='number'){
+               return undefined;
+            }
+            else
+               return a+b;
+         };
+      }
+   }
+}
+
+// test here
+addTogether(2,3);
+
