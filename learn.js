@@ -1067,3 +1067,136 @@ function findElement(arr, func) {
 }
 
 findElement([1, 2, 3, 4], function(num){ return num % 2 === 0; });
+
+//shift
+function dropElements(arr, func) {
+   // drop them elements.
+   var times = arr.length;
+   for (var i = 0; i < times; i++) {
+      if (func(arr[0])) {
+         break;
+      } else {
+         arr.shift();
+      }
+   }
+   return arr;
+}
+
+// test here
+dropElements([1, 2, 3, 4], function(n) {return n >= 3;})
+
+// Перетворення бінарних чисел в слова
+
+function binaryAgent(str) {
+   var a = str.split(" ");
+   var c = [];
+   for(var i=0; i<a.length; i++){
+      c.push(String.fromCharCode(parseInt(a[i], 2)));
+   }
+
+   return c.join("");
+}
+
+binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
+
+// Перетворення арабських цифр в римські
+var convertToRoman = function(num) {
+
+   var decimalValue = [ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ];
+   var romanNumeral = [ 'M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I' ];
+
+   var romanized = '';
+
+   for (var index = 0; index < decimalValue.length; index++) {
+      while (decimalValue[index] <= num) {
+         romanized += romanNumeral[index];
+         num -= decimalValue[index];
+      }
+   }
+
+   return romanized;
+}
+
+// test here
+convertToRoman(516);
+
+
+// Сума значень простого числа
+function sumPrimes(num) {
+   var res = 0;
+
+   // Function to get the primes up to max in an array
+   function getPrimes(max) {
+      var sieve = [];
+      var i;
+      var j;
+      var primes = [];
+      for (i = 2; i <= max; ++i) {
+         if (!sieve[i]) {
+            // i has not been marked -- it is prime
+            primes.push(i);
+            for (j = i < 1; j <= max; j += i) {
+               sieve[j] = true;
+            }
+         }
+      }
+
+      return primes;
+   }
+
+   // Add the primes
+   var primes = getPrimes(num);
+   for (var p = 0; p < primes.length; p++) {
+      res += primes[p];
+   }
+
+   return res;
+}
+
+// test here
+sumPrimes(10);
+
+// Перевіряє чи наявне значення в колекції
+function truthCheck(collection, pre) {
+   return collection.every(function (element) {
+      return element.hasOwnProperty(pre) && Boolean(element[pre]);
+   });
+}
+
+// test here
+truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
+
+// ----------------------------
+function truthCheck(collection, pre) {
+   // Is everyone being true?
+   return collection.every(obj => obj[pre]);
+}
+
+truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
+
+
+// Pig Latin
+function translatePigLatin(str) {
+   // Create variables to be used
+   var pigLatin = '';
+   var regex = /[aeiou]/gi;
+
+   // Check if the first character is a vowel
+   if (str[0].match(regex)) {
+      pigLatin = str + 'way';
+
+   } else {
+
+      // Find how many consonants before the first vowel.
+      var vowelIndice = str.indexOf(str.match(regex)[0]);
+
+      // Take the string from the first vowel to the last char
+      // then add the consonants that were previously omitted and add the ending.
+      pigLatin = str.substr(vowelIndice) + str.substr(0, vowelIndice) + 'ay';
+   }
+
+   return pigLatin;
+}
+
+// test here
+translatePigLatin("consonant");
