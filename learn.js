@@ -1200,3 +1200,96 @@ function translatePigLatin(str) {
 
 // test here
 translatePigLatin("consonant");
+
+
+// Map колекція
+function pairElement(str) {
+   //define a map object with all pair possibilities
+   var map = {T:'A', A:'T', G:'C', C:'G'};
+   //split str into a char Array
+   strArr = str.split('');
+   //replace each Array item with a 2d Array using map
+   for (var i=0;i<strArr.length;i++){
+      strArr[i]=[strArr[i], map[strArr[i]]];
+   }
+   return strArr;
+}
+
+// test here
+pairElement("GCG");
+
+
+// Convert HTML Entities
+function convertHTML(str) {
+   // Split by character to avoid problems.
+
+   var temp = str.split('');
+
+   // Since we are only checking for a few HTML elements I used a switch
+
+   for (var i = 0; i < temp.length; i++) {
+      switch (temp[i]) {
+         case '<':
+            temp[i] = '&lt;';
+            break;
+         case '&':
+            temp[i] = '&amp;';
+            break;
+         case '>':
+            temp[i] = '&gt;';
+            break;
+         case '"':
+            temp[i] = '&quot;';
+            break;
+         case "'":
+            temp[i] = "&apos;";
+            break;
+      }
+   }
+
+   temp = temp.join('');
+   return temp;
+}
+
+//test here
+convertHTML("Dolce & Gabbana");
+
+// Найменший спільний дільник масиву чисел
+function smallestCommons(arr) {
+   // Sort array from greater to lowest
+   // This line of code was from Adam Doyle (http://github.com/Adoyle2014)
+   arr.sort(function(a, b) {
+      return b - a;
+   });
+
+   // Create new array and add all values from greater to smaller from the
+   // original array.
+   var newArr = [];
+   for (var i = arr[0]; i >= arr[1]; i--) {
+      newArr.push(i);
+   }
+
+   // Variables needed declared outside the loops.
+   var quot = 0;
+   var loop = 1;
+   var n;
+
+   // Run code while n is not the same as the array length.
+   do {
+      quot = newArr[0] * loop * newArr[1];
+      for (n = 2; n < newArr.length; n++) {
+         if (quot % newArr[n] !== 0) {
+            break;
+         }
+      }
+
+      loop++;
+   }
+   while (n !== newArr.length)
+
+   return quot;
+}
+
+// test here
+smallestCommons([1,5]);
+
